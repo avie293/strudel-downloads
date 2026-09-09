@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strudel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+
+    <div class="clouds-background">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+    </div>
+
+    <header>
+    <img src="src/assets/strudel-logo.png" alt="Strudel Logo" class="logo-img">
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('modpacks')">Modpacks</button>
+        <button class="tab-btn" onclick="switchTab('worlds')">Worlds</button>
+        <button class="tab-btn" onclick="switchTab('server')">Server</button>
+    </div>
+</header>
+
+    <div id="modpacks" class="tab-content active">
+        <div class="grid-container">
+            <div class="card download-card">
+                <div>
+                    <h3>Meccha Crafteleon</h3>
+                    <p>(.mrpack ist für die Modrinth App)</p>
+                    <p>Version 26.2</p>
+                </div>
+                <a href="downloads/modpacks/meccha-crafteleon-1.zip" class="download-btn" download><i class="fa-solid fa-download"></i> Download (.zip)</a>
+                <a href="downloads/modpacks/meccha-crafteleon-1.mrpack" class="download-btn" download><i class="fa-solid fa-download"></i> Download (.mrpack)</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="worlds" class="tab-content">
+        <div class="grid-container">
+            <!--
+            <div class="card download-card">
+                <div>
+                    <h3>Haupt-Server Welt (Backup)</h3>
+                    <p>Stand: August 2026 • Über 500 Ingame-Tage</p>
+                </div>
+                <a href="downloads/worlds/world-backup-august.zip" class="download-btn" download><i class="fa-solid fa-download"></i> Welt herunterladen</a>
+            </div>
+        -->
+        </div>
+    </div>
+
+
+    <div id="server" class="tab-content">
+        
+        <div class="section-label">Aktive Server</div>
+        <div class="grid-container" id="active-servers">
+            <div class="card server-card" data-ip="play.avie29.me">
+                <div class="server-header">
+                    <img src="" alt="Icon" class="server-icon">
+                    <div class="server-title-area">
+                        <h3>Strudel SMP</h3>
+                        <p>Simple Voice Chat is auch drauf!</p>
+                        <span class="server-status-badge status-offline">Prüfe Status...</span>
+                    </div>
+                </div>
+                <div class="server-ip-box">
+                    <span class="ip-text">play.avie29.me</span>
+                    <button class="copy-btn" onclick="copyIp(this)"><i class="fa-regular fa-copy"></i> Kopieren</button>
+                </div>
+                <div class="server-info-text">
+                    <span class="player-count">Spieler: -/-</span>
+                    <span class="server-version">Version: -</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-label" style="margin-top: 30px;">Archivierte / Alte Server</div>
+        <div class="grid-container" id="archived-servers">
+            <!-- 
+            <div class="card server-card archived" data-ip="demo.mc-server.io">
+                <div class="server-header">
+                    <img src="" alt="Icon" class="server-icon">
+                    <div class="server-title-area">
+                        <h3>Strudel Season 1 (Alt)</h3>
+                        <span class="server-status-badge status-offline">Offline</span>
+                    </div>
+                </div>
+                <div class="server-ip-box">
+                    <span class="ip-text">demo.mc-server.io</span>
+                    <button class="copy-btn" onclick="copyIp(this)"><i class="fa-regular fa-copy"></i> Kopieren</button>
+                </div>
+                <div class="server-info-text">
+                    <span class="player-count">Spieler: 0/0</span>
+                    <span class="server-version">Archiviert</span>
+                </div>
+            </div>
+            -->
+        </div>
+
+    </div>
+
+    <script src="src/js/script.js"></script>
+</body>
+</html>
