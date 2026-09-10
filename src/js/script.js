@@ -181,10 +181,13 @@ async function fetchDiscordWidget() {
                             activityText = `<span class="member-activity">Spielt ${member.game.name}</span>`;
                         }
 
+                        // Fallback, falls member.status leer ist
+                        const memberStatus = member.status ? member.status : 'online';
+
                         memberRow.innerHTML = `
                             <div class="member-avatar-wrapper">
                                 <img src="${avatarUrl}" alt="${member.username}" class="member-avatar">
-                                <span class="member-status-indicator status-${member.status}"></span>
+                                <span class="member-status-indicator status-${memberStatus}"></span>
                             </div>
                             <div class="member-info">
                                 <span class="member-name">${member.username}</span>
