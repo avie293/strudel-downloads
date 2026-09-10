@@ -14,7 +14,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* Grundlegendes Body-Setup */
 body {
     background: linear-gradient(135deg, #ffd1dc 0%, #ffc0cb 50%, #ffb6c1 100%);
     background-attachment: fixed;
@@ -194,11 +193,10 @@ header {
 }
 
 .server-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 12px;
-    background: #ddd;
+    width: 64px;
+    height: 64px;
     object-fit: cover;
+    border-radius: 8px; 
 }
 
 .server-title-area h3 {
