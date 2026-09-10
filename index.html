@@ -19,9 +19,9 @@
     <header>
     <img src="src/assets/strudel-logo.png" alt="Strudel Logo" class="logo-img">
     <div class="tabs">
-        <button class="tab-btn active" onclick="switchTab('modpacks')">Modpacks</button>
-        <button class="tab-btn" onclick="switchTab('worlds')">Worlds</button>
-        <button class="tab-btn" onclick="switchTab('server')">Server</button>
+        <button class="tab-btn active" onclick="switchTab('modpacks', this)">Modpacks</button>
+        <button class="tab-btn" onclick="switchTab('worlds', this)">Worlds</button>
+        <button class="tab-btn" onclick="switchTab('server', this)">Server</button>
     </div>
 </header>
 
@@ -57,56 +57,70 @@
     </div>
 
 
-    <div id="server" class="tab-content">
+<div id="server" class="tab-content">
+    
+    <div class="grid-container" id="servers-container">
         
-        <div class="section-label">Aktive Server</div>
-        <div class="grid-container" id="active-servers">
-            <div class="card server-card" data-ip="strudel.modrinth.gg">
-                <div class="server-header">
-                    <img src="" alt="Icon" class="server-icon">
-                    <div class="server-title-area">
-                        <h3>Strudel V3</h3>
-                        <p>Coming Soon...</p>
-                        <span class="server-status-badge status-offline">Prüfe Status...</span>
-                    </div>
+        <div class="card server-card" data-ip="strudel.modrinth.gg" data-archived="false" data-archive-date=" - ">
+            <div class="server-header">
+                <img src="" alt="Icon" class="server-icon">
+                <div class="server-title-area">
+                    <h3>Strudel V3 In Aufbau</h3>
+                    <p class="server-motd"></p>
+                    <span class="server-status-badge status-offline"></span>
                 </div>
-                <div class="server-ip-box">
-                    <span class="ip-text">Coming soon...</span>
-                    <!--<button class="copy-btn" onclick="copyIp(this)"><i class="fa-regular fa-copy"></i> Kopieren</button>-->
-                </div>
-                <div class="server-info-text">
-                    <span class="player-count">Spieler: -/-</span>
-                    <span class="server-version">Version: -</span>
-                </div>
+            </div>
+            <div class="server-ip-box">
+                <span class="ip-text"></span>
+                <button class="copy-btn" onclick="copyIp(this)"><i class="fa-regular fa-copy"></i> Kopieren</button>
+            </div>
+            <div class="server-info-text">
+                <span class="player-count"></span>
+                <span class="server-version"></span>
             </div>
         </div>
 
-        <div class="section-label" style="margin-top: 30px;">Archivierte / Alte Server</div>
-        <div class="grid-container" id="archived-servers">
-            
-            <div class="card server-card archived" data-ip="play.avie29.me"
-                <div class="server-header">
-                    <img src="src/assets/000001-icon.png" alt="Archiv Icon" class="archived-icon">
-                    <div class="server-title-area">
-                        <h3>Strudel V2</h3>
-                        <span class="server-status-badge status-offline">Archiviert</span>
-                    </div>
-                </div>
-                <!--
-                <div class="server-ip-box">
-                    <span class="ip-text">play.avie29.me</span>
-                    <button class="copy-btn" onclick="copyIp(this)"><i class="fa-regular fa-copy"></i> Kopieren</button>
-                </div>
-                -->
-                <div class="server-info-text">
-                    <span class="player-count">Spieler: 0/0</span>
-                    <span class="server-version">26.2</span>
+        <div class="card server-card" data-ip="strudel-2.ggde.pro" data-archived="true" data-archive-date="09.09.2026">
+            <div class="server-header">
+                <img src="" alt="Icon" class="server-icon">
+                <div class="server-title-area">
+                    <h3>Strudel V2</h3>
+                    <p class="server-motd"></p>
+                    <span class="server-status-badge status-offline"></span>
                 </div>
             </div>
-            
+            <div class="server-ip-box">
+                <span class="ip-text"></span>
+                <button class="copy-btn" onclick="copyIp(this)"><i class="fa-regular fa-copy"></i> Kopieren</button>
+            </div>
+            <div class="server-info-text">
+                <span class="player-count"></span>
+                <span class="server-version"></span>
+            </div>
+        </div>
+
+        <div class="card server-card" data-ip="strudel.ggde.pro" data-archived="true" data-archive-date="01.07.2026">
+            <div class="server-header">
+                <img src="" alt="Icon" class="server-icon">
+                <div class="server-title-area">
+                    <h3>Strudel V1</h3>
+                    <p class="server-motd"></p>
+                    <span class="server-status-badge status-offline"></span>
+                </div>
+            </div>
+            <div class="server-ip-box">
+                <span class="ip-text"></span>
+                <button class="copy-btn" onclick="copyIp(this)"><i class="fa-regular fa-copy"></i> Kopieren</button>
+            </div>
+            <div class="server-info-text">
+                <span class="player-count"></span>
+                <span class="server-version"></span>
+            </div>
         </div>
 
     </div>
+
+</div>
 
     <script src="src/js/script.js"></script>
 </body>
