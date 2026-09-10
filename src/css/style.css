@@ -25,6 +25,10 @@ body {
     padding: 40px 20px;
     position: relative;
     overflow-x: hidden;
+    user-select: none;
+    -webkit-user-select: none; /* Safari / Chrome */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Ältere Edge/IE */
 }
 
 .clouds-background {
