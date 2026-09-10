@@ -255,9 +255,17 @@ header {
     opacity: 0.65;
     border-color: #ddd;
 }
+
 .card.archived .server-status-badge {
     background: #e2e3e5;
     color: #383d41;
+}
+
+.archived-icon {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 .download-card h3 {
