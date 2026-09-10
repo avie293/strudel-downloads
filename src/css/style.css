@@ -193,10 +193,11 @@ header {
 }
 
 .server-icon {
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #ddd;
     object-fit: cover;
-    border-radius: 8px; 
 }
 
 .server-title-area h3 {
@@ -262,10 +263,11 @@ header {
 }
 
 .archived-icon {
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #ddd;
     object-fit: cover;
-    border-radius: 8px;
 }
 
 .download-card h3 {
