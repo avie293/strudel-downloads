@@ -234,19 +234,30 @@ header {
 }
 
 .member-status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    border: 1.5px solid white;
+    border: 2px solid #fff; /* Schöner weißer Rand zum Abgrenzen */
 }
 
-.status-online { background-color: #23a55a !important; }
-.status-idle { background-color: #f0b232 !important; }
-.status-dnd { background-color: #f23f43 !important; }
-.status-offline { background-color: #80848e !important; }
+.status-online {
+    background-color: #23a55a !important; 
+}
+
+.status-idle {
+    background-color: #f0b232 !important;
+}
+
+.status-dnd {
+    background-color: #f23f43 !important;
+}
+
+.status-offline {
+    background-color: #80848e !important;
+}
 
 .member-info {
     display: flex;
