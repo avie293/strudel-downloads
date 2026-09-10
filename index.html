@@ -18,6 +18,31 @@
 
     <header>
     <img src="src/assets/strudel-logo.png" alt="Strudel Logo" class="logo-img">
+
+    <div class="card discord-custom-widget" id="discord-widget" data-server-id="1401247171986067496">
+        <div class="discord-top">
+            <div class="discord-icon-wrapper">
+                <i class="fa-brands fa-discord discord-main-icon"></i>
+            </div>
+            <div class="discord-title-area">
+                <h3 id="discord-server-name">Strudel</h3>
+                <div class="discord-stats">
+                    <span class="stat-item"><span class="pulse-dot"></span> <span id="discord-online-count">0</span> online</span>
+                    <span class="stat-separator"> </span>
+                    <span class="stat-item"><span class="gray-dot"></span> <span id="discord-total-count">0</span> members</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="discord-members-list" id="discord-members-list">
+            <div class="discord-member-loading">loading...</div>
+        </div>
+
+        <a href="https://discord.gg/CVPjY5KNvZ" target="_blank" class="discord-join-btn">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i> Join
+        </a>
+    </div>
+
     <div class="tabs">
         <button class="tab-btn active" onclick="switchTab('modpacks', this)">Modpacks</button>
         <button class="tab-btn" onclick="switchTab('worlds', this)">Worlds</button>
@@ -65,14 +90,14 @@
             <div class="server-header">
                 <img src="" alt="Icon" class="server-icon">
                 <div class="server-title-area">
-                    <h3>Strudel V3 In Aufbau</h3>
+                    <h3>Strudel V3</h3>
                     <p class="server-motd"></p>
                     <span class="server-status-badge status-offline"></span>
                 </div>
             </div>
             <div class="server-ip-box">
                 <span class="ip-text"></span>
-                <button class="copy-btn" onclick="copyIp(this)"><i class="fa-regular fa-copy"></i> Kopieren</button>
+                <!--<button class="copy-btn" onclick="copyIp(this)"><i class="fa-regular fa-copy"></i> Kopieren</button>-->
             </div>
             <div class="server-info-text">
                 <span class="player-count"></span>

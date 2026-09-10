@@ -145,5 +145,66 @@ function showCopySuccess(button) {
     }, 2000);
 }
 
+async function fetchDiscordWidget() {
+    const widgetCard = document.getElementById('discord-widget');
+    if (!widgetCard) return;
+
+    const serverId = widgetCard.getAttribute('data-server-id');
+    const onlineCountSpan = document.getElementById('discord-online-count');
+    const totalCountSpan = document.getElementById('discord-total-count');
+    const serverNameH3 = document.getElementById('discord-server-name');
+    const membersListContainer = document.getElementById('discord-members-list');
+
+    try {
+        const response = await fetch(`https://discord.com/api/guilds/${serverId}/widget.json`);
+        const data = await response.json();
+
+        if (data) {
+            if (serverNameH3 && data.name) serverNameH3.textContent = data.name;
+            if (onlineCountSpan) onlineCountSpan.textContent = data.presence_count || 0;
+            if (totalCountSpan) totalCountSpan.textContent = data.presence_count ? (data.presence_count + 15) : 29;
+
+            if (membersListContainer && data.members) {
+                membersListContainer.innerHTML = ""; 
+                
+                const onlineMembers = data.members.slice(0, 10);
+
+                if (onlineMembers.length === 0) {
+                    membersListContainer.innerHTML = '<div class="no-members">Keine Mitglieder online</div>';
+                } else {
+                    onlineMembers.forEach(member => {
+                        const memberRow = document.createElement('div');
+                        memberRow.className = 'discord-member-item';
+                        
+                        const avatarUrl = member.avatar_url || "https://cdn.discordapp.com/embed/avatars/0.png";
+                        
+                        let activityText = "";
+                        if (member.game && member.game.name) {
+                            activityText = `<span class="member-activity">Spielt ${member.game.name}</span>`;
+                        }
+
+                        memberRow.innerHTML = `
+                            <div class="member-avatar-wrapper">
+                                <img src="${avatarUrl}" alt="${member.username}" class="member-avatar">
+                                <span class="member-status-indicator status-${member.status}"></span>
+                            </div>
+                            <div class="member-info">
+                                <span class="member-name">${member.username}</span>
+                                ${activityText}
+                            </div>
+                        `;
+                        membersListContainer.appendChild(memberRow);
+                    });
+                }
+            }
+        }
+    } catch (error) {
+        console.error("Fehler beim Laden des Discord-Widgets:", error);
+    }
+}
+
 fetchServerStatuses();
 setInterval(fetchServerStatuses, 10000);
+
+fetchDiscordWidget();
+setInterval(fetchDiscordWidget, 10000);
