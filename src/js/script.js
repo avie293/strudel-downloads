@@ -169,7 +169,7 @@ async function fetchDiscordWidget() {
             if (membersListContainer && data.members) {
                 membersListContainer.innerHTML = ""; 
                 
-                const onlineMembers = data.members.slice(0, 10);
+                const onlineMembers = data.members.slice(0, 100000);
 
                 if (onlineMembers.length === 0) {
                     membersListContainer.innerHTML = '<div class="no-members">Keine Mitglieder online</div>';
