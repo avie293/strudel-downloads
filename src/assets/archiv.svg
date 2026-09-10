@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="100%" height="100%">
+  <!-- Hintergrund-Box mit abgerundeten Ecken passend zu deinen Karten -->
+  <rect width="64" height="64" rx="14" fill="#ffb3d1" />
+  
+  <!-- Archivbox / Ordner Grafik -->
+  <path d="M16 22H48V46C48 48.2091 46.2091 50 44 50H20C17.7909 50 16 48.2091 16 46V22Z" fill="#ffffff" opacity="0.9"/>
+  <path d="M12 18H52V22H12V18Z" fill="#ffffff" rx="2" />
+  
+  <!-- Kleines Etikett / Griff auf der Box -->
+  <rect x="24" y="30" width="16" height="8" rx="4" fill="#ff66a3" />
+</svg>

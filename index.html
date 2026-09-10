@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strudel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+
+    <div class="clouds-background">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+    </div>
+
+    <header>
+    <img src="src/assets/strudel-logo.png" alt="Strudel Logo" class="logo-img">
+
+    <div class="card discord-custom-widget" id="discord-widget" data-server-id="1401247171986067496">
+        <div class="discord-top">
+            <div class="discord-icon-wrapper">
+                <i class="fa-brands fa-discord discord-main-icon"></i>
+            </div>
+            <div class="discord-title-area">
+                <h3 id="discord-server-name">Strudel</h3>
+                <div class="discord-stats">
+                    <span class="stat-item"><span class="pulse-dot"></span> <span id="discord-online-count">0</span> online</span>
+                    <span class="stat-separator"> </span>
+                    <span class="stat-item"><span class="gray-dot"></span> <span id="discord-total-count">0</span> members</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="discord-members-list" id="discord-members-list">
+            <div class="discord-member-loading">loading...</div>
+        </div>
+
+        <a href="https://discord.gg/CVPjY5KNvZ" target="_blank" class="discord-join-btn">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i> Join
+        </a>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('modpacks', this)">Modpacks</button>
+        <button class="tab-btn" onclick="switchTab('worlds', this)">Worlds</button>
+        <button class="tab-btn" onclick="switchTab('server', this)">Server</button>
+    </div>
+</header>
+
+    <div id="modpacks" class="tab-content active">
+        <div class="grid-container">
+            <div class="card download-card">
+                <div>
+                    <h3>Meccha Crafteleon</h3>
+                    <p>(.mrpack ist für die Modrinth App)</p>
+                    <p>Version 26.2</p>
+                </div>
+                <a href="downloads/modpacks/meccha-crafteleon-1.zip" class="download-btn" download><i class="fa-solid fa-download"></i> Download (.zip)</a>
+                <a href="downloads/modpacks/meccha-crafteleon-1.mrpack" class="download-btn" download><i class="fa-solid fa-download"></i> Download (.mrpack)</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="worlds" class="tab-content">
+        <div class="grid-container">
+            
+            <div class="card download-card">
+                <div>
+                    <h3>Strudel V2 (world)</h3>
+                    <p>Version: 26.2 | 1.23 GB</p>
+                </div>
+                <a href="https://download1322.mediafire.com/kl6fiflfwzjg1WI-SNprHnSQVczFLzetF4pUkYqUIx6heInRgrCYUz30HfgO0cxYx0ZxKzH7BV5Y2E_HMqrM4jm3bfwdE5TRGtQ1GmHqlubiNcsN2cMbfD76Y5DU1XK30LSXqfQZhfFX6GOfgoNpXu-ePm72YyFdmwUpJPX-Ng/xf79bq9ziex1ee7/strudel-2-world.zip" class="download-btn">
+                    <i class="fa-solid fa-download"></i> Download (.zip)
+                </a>
+            </div>
+            
+        </div>
+    </div>
+
+
+<div id="server" class="tab-content">
+    
+    <div class="grid-container" id="servers-container">
+        
+        <div class="card server-card" data-ip="strudel.rip" data-archived="false" data-archive-date=" - ">
+            <div class="server-header">
+                <img src="" alt="Icon" class="server-icon">
+                <div class="server-title-area">
+                    <h3>Strudel V3</h3>
+                    <p class="server-motd"></p>
+                    <span class="server-status-badge status-offline"></span>
+                </div>
+            </div>
+            <div class="server-ip-box">
+                <span class="ip-text"></span>
+                <!--<button class="copy-btn" onclick="copyIp(this)"><i class="fa-regular fa-copy"></i> Kopieren</button>-->
+            </div>
+            <div class="server-info-text">
+                <span class="player-count"></span>
+                <span class="server-version"></span>
+            </div>
+        </div>
+
+        <div class="card server-card" data-ip="strudel-2.ggde.pro" data-archived="true" data-archive-date="09.09.2026">
+            <div class="server-header">
+                <img src="" alt="Icon" class="server-icon">
+                <div class="server-title-area">
+                    <h3>Strudel V2</h3>
+                    <p class="server-motd"></p>
+                    <span class="server-status-badge status-offline"></span>
+                </div>
+            </div>
+            <div class="server-ip-box">
+                <span class="ip-text"></span>
+                <button class="copy-btn" onclick="copyIp(this)"><i class="fa-regular fa-copy"></i> Kopieren</button>
+            </div>
+            <div class="server-info-text">
+                <span class="player-count"></span>
+                <span class="server-version"></span>
+            </div>
+        </div>
+
+        <div class="card server-card" data-ip="strudel.ggde.pro" data-archived="true" data-archive-date="01.07.2026">
+            <div class="server-header">
+                <img src="" alt="Icon" class="server-icon">
+                <div class="server-title-area">
+                    <h3>Strudel V1</h3>
+                    <p class="server-motd"></p>
+                    <span class="server-status-badge status-offline"></span>
+                </div>
+            </div>
+            <div class="server-ip-box">
+                <span class="ip-text"></span>
+                <button class="copy-btn" onclick="copyIp(this)"><i class="fa-regular fa-copy"></i> Kopieren</button>
+            </div>
+            <div class="server-info-text">
+                <span class="player-count"></span>
+                <span class="server-version"></span>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+    <script src="src/js/script.js"></script>
+</body>
+</html>

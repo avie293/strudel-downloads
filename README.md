@@ -1,1 +1,1 @@
-https://strudel.rip
+https://strudel.avie29.me
