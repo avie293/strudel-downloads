@@ -63,13 +63,13 @@ async function fetchServerStatuses() {
                 if (data.icon) {
                     iconImg.src = data.icon;
                 } else {
-                    iconImg.src = "https://via.placeholder.com/48?text=MC";
+                    iconImg.src = "src/assets/archiv.svg";
                 }
             } else {
                 statusBadge.textContent = "Offline";
                 statusBadge.className = "server-status-badge status-offline";
                 playerCount.textContent = "Spieler: 0/0";
-                iconImg.src = "https://via.placeholder.com/48?text=MC";
+                iconImg.src = "src/assets/archiv.svg";
             }
         } catch (error) {
             statusBadge.textContent = "Fehler";
