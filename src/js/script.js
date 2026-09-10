@@ -70,6 +70,10 @@ async function fetchServerStatuses() {
                 statusBadge.className = "server-status-badge status-offline";
                 playerCount.textContent = "Spieler: 0/0";
                 iconImg.src = "src/assets/archiv.svg";
+                
+                if (motdElement) {
+                    motdElement.textContent = "Can't connect to server";
+                }
             }
         } catch (error) {
             statusBadge.textContent = "Fehler";
