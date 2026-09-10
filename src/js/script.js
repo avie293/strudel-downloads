@@ -151,7 +151,6 @@ async function fetchDiscordWidget() {
 
     const serverId = widgetCard.getAttribute('data-server-id');
     const onlineCountSpan = document.getElementById('discord-online-count');
-    const totalCountSpan = document.getElementById('discord-total-count');
     const serverNameH3 = document.getElementById('discord-server-name');
     const membersListContainer = document.getElementById('discord-members-list');
 
@@ -162,7 +161,6 @@ async function fetchDiscordWidget() {
         if (data) {
             if (serverNameH3 && data.name) serverNameH3.textContent = data.name;
             if (onlineCountSpan) onlineCountSpan.textContent = data.presence_count || 0;
-            if (totalCountSpan) totalCountSpan.textContent = data.presence_count ? (data.presence_count + 15) : 29;
 
             if (membersListContainer && data.members) {
                 membersListContainer.innerHTML = ""; 
