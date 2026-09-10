@@ -397,6 +397,15 @@ header {
     color: var(--text-dark);
 }
 
+.server-motd {
+    font-size: 0.9rem;
+    color: #666;
+    min-height: 1.2em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .server-status-badge {
     font-size: 0.8rem !important;
     padding: 4px 10px !important;
