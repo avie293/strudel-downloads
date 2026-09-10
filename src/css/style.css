@@ -449,6 +449,10 @@ header {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .copy-btn {
