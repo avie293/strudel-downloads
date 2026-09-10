@@ -233,32 +233,6 @@ header {
     object-fit: cover;
 }
 
-.member-status-indicator {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    border: 2px solid #fff; /* Schöner weißer Rand zum Abgrenzen */
-}
-
-.status-online {
-    background-color: #23a55a !important; 
-}
-
-.status-idle {
-    background-color: #f0b232 !important;
-}
-
-.status-dnd {
-    background-color: #f23f43 !important;
-}
-
-.status-offline {
-    background-color: #80848e !important;
-}
-
 .member-info {
     display: flex;
     flex-direction: column;
@@ -551,4 +525,30 @@ header {
     margin: 20px 0 10px 5px;
     color: var(--white);
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.member-status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: 2px solid #fff;
+}
+
+.member-status-indicator.status-online {
+    background-color: #23a55a !important;
+}
+
+.member-status-indicator.status-idle {
+    background-color: #f0b232 !important;
+}
+
+.member-status-indicator.status-dnd {
+    background-color: #f23f43 !important;
+}
+
+.member-status-indicator.status-offline {
+    background-color: #80848e !important;
 }
