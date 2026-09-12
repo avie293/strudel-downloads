@@ -209,7 +209,7 @@ async function fetchDiscordWidget() {
 }
 
 fetchServerStatuses();
-setInterval(fetchServerStatuses, 10000);
+setInterval(fetchServerStatuses, 2000);
 
 fetchDiscordWidget();
-setInterval(fetchDiscordWidget, 10000);
+setInterval(fetchDiscordWidget, 2000);
