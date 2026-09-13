@@ -334,6 +334,52 @@ document.addEventListener('DOMContentLoaded', () => {
     initScreenshotsGallery();
 });
 
+const topButtonsConfig = {
+    github: {
+        enabled: true,
+        url: "https://github.com/avie293/strudel-downloads"
+    },
+    discord: {
+        enabled: true,
+        url: "https://discord.gg/CVPjY5KNvZ"
+    },
+    youtube: {
+        enabled: false,
+        url: "https://youtube.com/@deinchannel"
+    }
+};
+
+function initTopButtons() {
+    const ghBtn = document.getElementById('btn-github');
+    if (ghBtn) {
+        ghBtn.href = topButtonsConfig.github.url;
+        if (!topButtonsConfig.github.enabled) {
+            ghBtn.classList.add('disabled');
+        }
+    }
+
+    const dcBtn = document.getElementById('btn-discord');
+    if (dcBtn) {
+        dcBtn.href = topButtonsConfig.discord.url;
+        if (!topButtonsConfig.discord.enabled) {
+            dcBtn.classList.add('disabled');
+        }
+    }
+
+    const ytBtn = document.getElementById('btn-youtube');
+    if (ytBtn) {
+        ytBtn.href = topButtonsConfig.youtube.url;
+        if (!topButtonsConfig.youtube.enabled) {
+            ytBtn.classList.add('disabled');
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initScreenshotsGallery();
+    initTopButtons();
+});
+
 fetchServerStatuses();
 setInterval(fetchServerStatuses, 2000);
 

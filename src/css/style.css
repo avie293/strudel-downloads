@@ -26,9 +26,9 @@ body {
     position: relative;
     overflow-x: hidden;
     user-select: none;
-    -webkit-user-select: none; /* Safari / Chrome */
-    -moz-user-select: none;    /* Firefox */
-    -ms-user-select: none;     /* Ältere Edge/IE */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .clouds-background {
@@ -104,13 +104,83 @@ header {
     margin-bottom: 30px;
 }
 
-.logo-img {
+/*.logo-img {
     max-width: 250px;
     width: 100%;
     height: auto;
     margin-bottom: 25px;
     filter: drop-shadow(3px 3px 0px rgba(255, 102, 163, 0.4)) 
             drop-shadow(6px 6px 10px rgba(0, 0, 0, 0.1));
+}
+            */
+
+.top-right-buttons {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 999;
+}
+
+.top-nav-btn {
+    background: #e05590;
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0 14px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(6px);
+    transition: background 0.2s, transform 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.top-nav-btn i {
+    color: var(--white);
+    font-size: 1rem;
+}
+
+.top-nav-btn:hover {
+    background: var(--accent-pink);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    color: var(--white);
+}
+
+.top-nav-btn:hover i {
+    color: var(--white);
+}
+
+.top-nav-btn.disabled {
+    opacity: 0.4;
+    background: #e05590;
+    border-color: rgba(255, 255, 255, 0.05);
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+#btn-github:hover {
+    background: #24292e;
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+#btn-discord:hover {
+    background: #5865F2;
+    border-color: #5865F2;
+    transform: translateY(-2px);
+}
+
+#btn-youtube:hover {
+    background: #FF0000;
+    border-color: #FF0000;
+    transform: translateY(-2px);
 }
 
 .discord-custom-widget {
