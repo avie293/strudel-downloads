@@ -907,3 +907,42 @@ header {
 .slide-left {
     animation: slideFromLeft 0.3s ease-out;
 }
+
+@media (max-width: 768px) {
+    .top-right-buttons {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        gap: 6px;
+    }
+
+    .top-nav-btn {
+        height: 36px;
+        padding: 0 10px;
+        font-size: 0.8rem;
+    }
+
+    .top-nav-btn span {
+        display: none;
+    }
+
+    .tabs-container, .nav-tabs {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        max-width: 100%;
+        padding-bottom: 5px;
+        scrollbar-width: none; 
+    }
+    
+    .tabs-container::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    body {
+        min-height: 100vh;
+        min-height: 100dvh;
+        background-attachment: fixed;
+    }
+}
