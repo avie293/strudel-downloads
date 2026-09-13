@@ -908,19 +908,18 @@ header {
     animation: slideFromLeft 0.3s ease-out;
 }
 
-/* --- Hintergrund- und Body-Fix für Mobile --- */
+/* --- Hintergrund- und Body-Fix für Mobile
 html, body {
     width: 100%;
     min-height: 100vh;
     min-height: 100dvh;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Verhindert das seitliche Wegdrücken der Seite */
-    background-color: var(--bg-color, #ffccd5); /* Fallback, falls die Hintergrundfarbe/Grafik fehlt */
+    overflow-x: hidden;
+    background-color: var(--bg-color, #ffccd5);
 }
 
 @media (max-width: 768px) {
-    /* 1. Top-Buttons kompakter anordnen, damit sie sich nicht überlappen */
     .top-right-buttons {
         position: fixed !important;
         top: 12px !important;
@@ -939,10 +938,9 @@ html, body {
     }
 
     .top-nav-btn span {
-        display: none !important; /* Nur Icons anzeigen */
+        display: none !important;
     }
 
-    /* 2. Tabs-Container zwingend auf die Bildschirmbreite begrenzen und scrollbar machen */
     .tabs-container, .nav-tabs {
         display: flex !important;
         width: 100% !important;
@@ -958,5 +956,5 @@ html, body {
 
     .tabs-container::-webkit-scrollbar, .nav-tabs::-webkit-scrollbar {
         display: none !important;
-    }
+    } */
 }
