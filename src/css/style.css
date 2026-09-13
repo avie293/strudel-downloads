@@ -908,48 +908,55 @@ header {
     animation: slideFromLeft 0.3s ease-out;
 }
 
-/* --- Mobile Responsive Fixes (Erzwungen gegen Cache) --- */
+/* --- Hintergrund- und Body-Fix für Mobile --- */
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Verhindert das seitliche Wegdrücken der Seite */
+    background-color: var(--bg-color, #ffccd5); /* Fallback, falls die Hintergrundfarbe/Grafik fehlt */
+}
+
 @media (max-width: 768px) {
-    /* 1. Top-Buttons fest nach oben rechts pappen und Text ausblenden, damit nur Icons bleiben */
+    /* 1. Top-Buttons kompakter anordnen, damit sie sich nicht überlappen */
     .top-right-buttons {
         position: fixed !important;
-        top: 10px !important;
-        right: 10px !important;
-        left: auto !important;
-        gap: 5px !important;
+        top: 12px !important;
+        right: 12px !important;
+        display: flex !important;
+        gap: 4px !important;
         z-index: 9999 !important;
     }
 
     .top-nav-btn {
-        height: 38px !important;
-        padding: 0 10px !important;
-        font-size: 0.8rem !important;
+        width: 36px !important;
+        height: 36px !important;
+        padding: 0 !important;
+        justify-content: center !important;
+        border-radius: 10px !important;
     }
 
-    /* Blendet den Text ("GitHub", "Discord", etc.) auf dem Handy komplett aus */
     .top-nav-btn span {
-        display: none !important;
+        display: none !important; /* Nur Icons anzeigen */
     }
 
-    /* 2. Tab-Auswahl scrollbar machen und links/rechts abpuffern */
+    /* 2. Tabs-Container zwingend auf die Bildschirmbreite begrenzen und scrollbar machen */
     .tabs-container, .nav-tabs {
         display: flex !important;
-        overflow-x: auto !important;
-        white-space: nowrap !important;
         width: 100% !important;
-        padding: 0 15px 8px 15px !important;
+        max-width: 100vw !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        white-space: nowrap !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding: 0 10px 10px 10px !important;
         box-sizing: border-box !important;
         scrollbar-width: none !important;
     }
-    
+
     .tabs-container::-webkit-scrollbar, .nav-tabs::-webkit-scrollbar {
         display: none !important;
-    }
-
-    /* 3. Hintergrund-Fix für mobile Viewports */
-    body {
-        min-height: 100vh !important;
-        min-height: 100dvh !important;
-        background-attachment: fixed !important;
     }
 }
