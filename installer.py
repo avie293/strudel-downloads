@@ -14,9 +14,9 @@ try:
 except:
     pass
 
-REPO_OWNER = "avie293"
-REPO_NAME = "strudel-downloads"
-REPO_BRANCH = "strudel-v2-world/download"
+REPO_OWNER = "UR_USERNAME" #<-- Change to your github username
+REPO_NAME = "UR_REPO_NAME" #<-- Change to your repository name
+REPO_BRANCH = "UR_REPO_BRANCH" #<-- Change to your repository branch
 
 ctk.set_appearance_mode("Light")
 ctk.set_default_color_theme("green")
@@ -144,7 +144,7 @@ class StrudelWorldInstaller(ctk.CTk):
 
         self.heading_label = ctk.CTkLabel(
             self.main_card, 
-            text="Strudel V2 (world)", 
+            text="UR_WORLD_NAME", #<-- Change to your world name
             font=ctk.CTkFont(size=24, weight="bold"),
             text_color="#2b2b2b"
         )
@@ -173,7 +173,7 @@ class StrudelWorldInstaller(ctk.CTk):
             self.form_container, height=38, 
             fg_color="#ffffff", border_color="#ff69b4", text_color="#333333", font=ctk.CTkFont(size=12)
         )
-        self.entry_world.insert(0, "strudel-v2-world")
+        self.entry_world.insert(0, "DEFAULT_WORLD_NAME") #<-- Change to your DEFAULT world name
         self.entry_world.grid(row=0, column=1, columnspan=2, padx=(0, 20), pady=16, sticky="ew")
 
         self.lbl_path = ctk.CTkLabel(
