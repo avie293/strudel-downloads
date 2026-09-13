@@ -908,41 +908,48 @@ header {
     animation: slideFromLeft 0.3s ease-out;
 }
 
+/* --- Mobile Responsive Fixes (Erzwungen gegen Cache) --- */
 @media (max-width: 768px) {
+    /* 1. Top-Buttons fest nach oben rechts pappen und Text ausblenden, damit nur Icons bleiben */
     .top-right-buttons {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        gap: 6px;
+        position: fixed !important;
+        top: 10px !important;
+        right: 10px !important;
+        left: auto !important;
+        gap: 5px !important;
+        z-index: 9999 !important;
     }
 
     .top-nav-btn {
-        height: 36px;
-        padding: 0 10px;
-        font-size: 0.8rem;
+        height: 38px !important;
+        padding: 0 10px !important;
+        font-size: 0.8rem !important;
     }
 
+    /* Blendet den Text ("GitHub", "Discord", etc.) auf dem Handy komplett aus */
     .top-nav-btn span {
-        display: none;
+        display: none !important;
     }
 
+    /* 2. Tab-Auswahl scrollbar machen und links/rechts abpuffern */
     .tabs-container, .nav-tabs {
-        display: flex;
-        overflow-x: auto;
-        white-space: nowrap;
-        max-width: 100%;
-        padding-bottom: 5px;
-        scrollbar-width: none; 
+        display: flex !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        width: 100% !important;
+        padding: 0 15px 8px 15px !important;
+        box-sizing: border-box !important;
+        scrollbar-width: none !important;
     }
     
-    .tabs-container::-webkit-scrollbar {
-        display: none;
+    .tabs-container::-webkit-scrollbar, .nav-tabs::-webkit-scrollbar {
+        display: none !important;
     }
 
-
+    /* 3. Hintergrund-Fix für mobile Viewports */
     body {
-        min-height: 100vh;
-        min-height: 100dvh;
-        background-attachment: fixed;
+        min-height: 100vh !important;
+        min-height: 100dvh !important;
+        background-attachment: fixed !important;
     }
 }
