@@ -97,6 +97,7 @@
 <div id="server" class="tab-content">
     
     <div class="grid-container" id="servers-container">
+         <a href="strudelv3.html" style="text-decoration: none; color: inherit; display: block;">
         <div class="card server-card" data-ip="play.strudel.rip" data-archived="false" data-archive-date="">
             <div class="server-header">
                 <img src="" alt="Icon" class="server-icon">
@@ -105,17 +106,22 @@
                     <p class="server-motd"></p>
                     <span class="server-status-badge status-offline"></span>
                 </div>
+                <span class="server-ping"></span>
             </div>
             <div class="server-ip-box">
                 <span class="ip-text"></span>
                 <button class="copy-btn" onclick="copyIp(this)"><i class="fa-regular fa-copy"></i> Kopieren</button>
             </div>
             <div class="server-info-text">
-                <span class="player-count"></span>
+                <div class="player-count-wrapper">
+                   <span class="player-count"></span>
+                   <div class="player-tooltip"></div>
+                </div>
                 <span class="server-version"></span>
             </div>
         </div>
-        
+        </a>
+
         <div class="card server-card" data-ip="play.strudel.rip" data-archived="true" data-archive-date="14.09.2026">
             <div class="server-header">
                 <img src="" alt="Icon" class="server-icon">
@@ -134,7 +140,7 @@
                 <span class="server-version"></span>
             </div>
         </div>
-
+    
         <div class="card server-card" data-ip="strudel-2.ggde.pro" data-archived="true" data-archive-date="09.09.2026">
             <div class="server-header">
                 <img src="" alt="Icon" class="server-icon">

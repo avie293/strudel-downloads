@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Details - Strudel</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="clouds-background">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+    </div>
+
+    <div class="top-right-buttons">
+        <a href="index.html" class="top-nav-btn">
+            <i class="fa-solid fa-arrow-left"></i> Zurück
+        </a>
+        <a id="btn-github" href="https://github.com/avie293/strudel-downloads" class="top-nav-btn" target="_blank">
+            <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <a id="btn-discord" href="https://discord.gg/CVPjY5KNvZ" class="top-nav-btn" target="_blank">
+            <i class="fa-brands fa-discord"></i> Discord
+        </a>
+    </div>
+
+    <header>
+        <h1 style="color: var(--white); font-size: 2.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">Server Details</h1>
+    </header>
+
+    <main class="tab-content active" style="max-width: 800px; width: 100%;">
+        
+        <div class="card server-card detail-server-card" data-ip="play.strudel.rip">
+            
+            <span class="server-ping" style="display: none;">- ms</span>
+
+            <div class="server-header">
+                <img src="src/assets/archiv.svg" alt="Server Icon" class="server-icon">
+                <div class="server-title-area">
+                    <h3 class="server-name-title">Strudel V3</h3>
+                    <div class="server-motd">Lade Serverdaten...</div>
+                    <span class="server-status-badge status-offline">Laden...</span>
+                </div>
+            </div>
+
+            <div class="server-ip-box">
+                <span class="ip-text">play.strudel.rip</span>
+                <button class="copy-btn" onclick="copyIp(this)">
+                    <i class="fa-solid fa-copy"></i> Kopieren
+                </button>
+            </div>
+
+            <div class="server-info-text">
+                <div class="player-count-wrapper">
+                   <span class="player-count"></span>
+                   <div class="player-tooltip"></div>
+                </div>
+                <span class="server-version"></span>
+            </div>
+        </div>
+
+        <div class="section-label" style="margin-top: 30px;">
+            <i class="fa-solid fa-users"></i> Alle bekannten Spieler
+        </div>
+
+        <div class="card player-history-card">
+            <div class="player-history-header">
+                <span>Spieler</span>
+                <span>Status</span>
+            </div>
+            <div id="player-history-list" class="player-history-list">
+                <div class="no-players-text">Noch keine Spieler registriert...</div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="src/js/script.js"></script>
+    <script src="src/js/server-detail.js"></script>
+</body>
+</html>

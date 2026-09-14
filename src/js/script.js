@@ -14,6 +14,7 @@ async function fetchServerStatuses() {
         const playerCount = card.querySelector('.player-count');
         const iconImg = card.querySelector('.server-icon');
         const motdElement = card.querySelector('.server-motd');
+        const pingElement = card.querySelector('.server-ping');
 
         if (isArchived) {
             card.classList.add('archived');
@@ -36,22 +37,69 @@ async function fetchServerStatuses() {
                 motdElement.textContent = "Archivierter Server";
             }
 
+            if (pingElement) {
+                pingElement.style.display = 'none';
+            }
+
             return; 
         }
 
         if (!ip) return;
 
         const serverVersion = card.querySelector('.server-version');
+        const tooltip = card.querySelector('.player-tooltip');
 
         try {
+            const startTime = performance.now();
             const response = await fetch(`https://api.mcsrvstat.us/3/${ip}`);
+            const endTime = performance.now();
+            const measuredPing = Math.round(endTime - startTime);
+
             const data = await response.json();
 
             if (data.online) {
                 statusBadge.textContent = "Online";
                 statusBadge.className = "server-status-badge status-online";
-                playerCount.textContent = `Spieler: ${data.players.online}/${data.players.max}`;
-                
+
+                const newCountText = `Spieler: ${data.players.online}/${data.players.max}`;
+                if (playerCount.textContent !== newCountText) {
+                    playerCount.textContent = newCountText;
+                    playerCount.classList.add('count-updated');
+                    setTimeout(() => playerCount.classList.remove('count-updated'), 500);
+                }
+
+                if (pingElement) {
+                    if (data.debug && typeof data.debug.ping === 'number') {
+                        pingElement.textContent = `${data.debug.ping} ms`;
+                    } else {
+                        pingElement.textContent = `${measuredPing} ms`;
+                    }
+                    pingElement.style.display = 'inline-block';
+                }
+
+                if (tooltip) {
+                    if (data.players.list && data.players.list.length > 0) {
+                        tooltip.innerHTML = data.players.list.map(player => {
+                            const isObject = typeof player === 'object';
+                            const name = isObject ? player.name : player;
+                            const uuid = isObject ? player.uuid : null;
+
+                            const avatarUrl = uuid 
+                                ? `https://minotar.net/helm/${uuid}/16` 
+                                : `https://minotar.net/helm/${name}/16`;
+
+                            return `<div class="tooltip-player-item">
+                                        <img src="${avatarUrl}" alt="${name}" onerror="this.src='https://minotar.net/helm/MNS/16'">
+                                        <span>${name}</span>
+                                    </div>`;
+                        }).join('');
+                    } else if (data.players.online > 0) {
+                        tooltip.textContent = "Spielernamen verdeckt";
+                    } else {
+                        tooltip.textContent = "Niemand online";
+                    }
+                }
+
                 if (motdElement && data.motd && data.motd.clean) {
                     motdElement.textContent = data.motd.clean.join(' ');
                 }
@@ -74,10 +122,22 @@ async function fetchServerStatuses() {
                 if (motdElement) {
                     motdElement.textContent = "Can't connect to server";
                 }
+
+                if (pingElement) {
+                    pingElement.style.display = 'none';
+                }
+
+                if (tooltip) {
+                    tooltip.textContent = "Server offline";
+                }
             }
         } catch (error) {
             statusBadge.textContent = "Fehler";
             statusBadge.className = "server-status-badge status-offline";
+            
+            if (pingElement) {
+                pingElement.style.display = 'none';
+            }
         }
     });
 }
@@ -323,15 +383,11 @@ document.addEventListener('keydown', (e) => {
 
     if (e.key === 'Escape') {
         closeLightboxDirect();
-    }else if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') {
+    } else if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') {
         changeSlide(-1);
     } else if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') {
         changeSlide(1);
     }
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    initScreenshotsGallery();
 });
 
 const topButtonsConfig = {
@@ -381,7 +437,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 fetchServerStatuses();
-setInterval(fetchServerStatuses, 2000);
+setInterval(fetchServerStatuses, 15000);
 
 fetchDiscordWidget();
-setInterval(fetchDiscordWidget, 2000);
+setInterval(fetchDiscordWidget, 5000);
